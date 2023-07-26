@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qiwi.MoneyToText", "Qiwi.MoneyToText.csproj", "{401740B7-971C-4B15-BD42-DFFE367CB011}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qiwi.MoneyToText", "Qiwi.MoneyToText\Qiwi.MoneyToText.csproj", "{3D0F51EC-8E8D-402F-84D0-6E70A1BD76BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qiwi.MoneyToText.UnitTests", "Qiwi.MoneyToText.UnitTests\Qiwi.MoneyToText.UnitTests.csproj", "{F0B582F9-1376-4542-8CB3-38535056B94C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{401740B7-971C-4B15-BD42-DFFE367CB011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{401740B7-971C-4B15-BD42-DFFE367CB011}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{401740B7-971C-4B15-BD42-DFFE367CB011}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{401740B7-971C-4B15-BD42-DFFE367CB011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D0F51EC-8E8D-402F-84D0-6E70A1BD76BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D0F51EC-8E8D-402F-84D0-6E70A1BD76BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D0F51EC-8E8D-402F-84D0-6E70A1BD76BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D0F51EC-8E8D-402F-84D0-6E70A1BD76BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B582F9-1376-4542-8CB3-38535056B94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B582F9-1376-4542-8CB3-38535056B94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B582F9-1376-4542-8CB3-38535056B94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B582F9-1376-4542-8CB3-38535056B94C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -14,6 +14,8 @@ public class EnglishNumeralConverter : INumeralConverter
     {
         switch (number)
         {
+            case 0:
+                return string.Empty;
             case < 20:
                 return EnglishNumerals.Number[number];
             case < 100:
