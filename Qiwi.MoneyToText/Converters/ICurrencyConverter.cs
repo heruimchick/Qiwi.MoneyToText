@@ -3,5 +3,5 @@ namespace Qiwi.MoneyToText.Converters;
 
 public interface ICurrencyConverter
 {
-    (string, string) Convert(Currency currency, decimal value);
+    (string MainCurrencyPart, string MinorUnitPart) Convert(Currency currency, decimal value);
 }
