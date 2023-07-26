@@ -1,4 +1,4 @@
-namespace Qiwi.MoneyToText;
+namespace Qiwi.MoneyToText.Currencies;
 
 public enum CurrencyCode
 {

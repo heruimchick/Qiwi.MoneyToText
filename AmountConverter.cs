@@ -1,4 +1,5 @@
-﻿namespace Qiwi.MoneyToText;
+﻿using Qiwi.MoneyToText.Converters;
+namespace Qiwi.MoneyToText;
 
 public class AmountConverter : IAmountConverter
 {
@@ -12,6 +13,6 @@ public class AmountConverter : IAmountConverter
 
     public string ConvertToText(Amount amount)
     {
-        return $"{_numeralConverter.Convert(amount.Value)} {_currencyConverter.Convert(amount.CurrencyCode, amount.Value)}";
+        return $"{_numeralConverter.Convert(amount.Value)} {_currencyConverter.Convert(amount.Currency, amount.Value)}";
     }
 }

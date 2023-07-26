@@ -1,13 +1,14 @@
+using Qiwi.MoneyToText.Currencies;
 namespace Qiwi.MoneyToText;
 
 public struct Amount
 {
-    public CurrencyCode CurrencyCode { get; }
+    public Currency Currency { get; }
     public decimal Value { get; }
 
-    public Amount (CurrencyCode currencyCode, decimal value)
+    public Amount (Currency currency, decimal value)
     {
-        CurrencyCode = currencyCode;
+        Currency = currency;
         Value = value;
     }
 }
