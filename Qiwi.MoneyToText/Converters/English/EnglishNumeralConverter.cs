@@ -1,3 +1,4 @@
+using System.Text;
 namespace Qiwi.MoneyToText.Converters.English;
 
 public class EnglishNumeralConverter : INumeralConverter
@@ -12,6 +13,7 @@ public class EnglishNumeralConverter : INumeralConverter
 
     private string Convert(int number)
     {
+        var sb = new StringBuilder();
         switch (number)
         {
             case 0:
@@ -19,29 +21,36 @@ public class EnglishNumeralConverter : INumeralConverter
             case < 20:
                 return EnglishNumerals.Simple[number];
             case < 100:
-                return EnglishNumerals.Tens[RoundDownToNearestTen(number)] 
-                       + GetRemainderTextIfNeeded(number, "-", 10);
+                sb.Append(EnglishNumerals.Tens[RoundDownToNearestTen(number)]); 
+                AppendRemainderTextIfNeeded(sb, number, "-", 10);
+                return sb.ToString();
             case < 1000:
-                return EnglishNumerals.Simple[number / 100] 
-                       + " " + EnglishNumerals.Scales[100] 
-                       + GetRemainderTextIfNeeded(number, " and ", 100);
+                sb.Append(EnglishNumerals.Simple[number / 100]);
+                sb.Append(' ');
+                sb.Append(EnglishNumerals.Scales[100]); 
+                AppendRemainderTextIfNeeded(sb, number, " and ", 100);
+                return sb.ToString();
         }
         foreach (int scale in EnglishNumerals.Scales.Keys.OrderByDescending(x => x))
         {
             if (number < scale) continue;
-            return Convert(number / scale) 
-                   + " " + EnglishNumerals.Scales[scale]
-                   + GetRemainderTextIfNeeded(number, ", ", scale);
+            sb.Append(Convert(number / scale));
+            sb.Append(' ');
+            sb.Append(EnglishNumerals.Scales[scale]);
+            AppendRemainderTextIfNeeded(sb, number, ", ", scale);
+            return sb.ToString();
         }
 
         throw new ArgumentException("Number is too large to convert to words");
     }
     
     private static int RoundDownToNearestTen(int number) => number / 10 * 10;
-    private string GetRemainderTextIfNeeded(int number, string separator, int divider)
+    private void AppendRemainderTextIfNeeded(StringBuilder sb, int number, string separator, int divider)
     {
-        return number % divider != 0 
-            ? separator + Convert(number % divider) 
-            : string.Empty;
+        if (number % divider == 0)
+            return;
+        
+        sb.Append(separator);
+        sb.Append(Convert(number % divider));
     }
 }
