@@ -1,10 +1,9 @@
 namespace Qiwi.MoneyToText.Converters.English;
 
-public class EnglishNumerals
+public static class EnglishNumerals
 {
-    public static readonly Dictionary<int, string> Number = new()
+    public static readonly Dictionary<int, string> Simple = new()
     {
-        {0, "zero"},
         {1, "one"},
         {2, "two"},
         {3, "three"},
@@ -24,6 +23,10 @@ public class EnglishNumerals
         {17, "seventeen"},
         {18, "eighteen"},
         {19, "nineteen"},
+    };
+
+    public static readonly Dictionary<int, string> Tens = new()
+    {
         {20, "twenty"},
         {30, "thirty"},
         {40, "forty"},
@@ -33,8 +36,8 @@ public class EnglishNumerals
         {80, "eighty"},
         {90, "ninety"}
     };
-    
-    public static readonly Dictionary<int, string> Scale = new()
+
+    public static readonly Dictionary<int, string> Scales = new()
     {
         {100, "hundred"},
         {1000, "thousand"},
