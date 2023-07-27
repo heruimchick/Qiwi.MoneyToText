@@ -14,6 +14,11 @@ public class AmountConverter : IAmountConverter
 
     public string ConvertToText(Amount amount)
     {
+        if (amount.Value <= 0)
+        {
+            throw new ArgumentException("Amount must be positive");
+        }
+        
         (string mainNumeral, string fractionalNumeral) = _numeralConverter.Convert(amount.Value);
         (string mainCurrencyPart, string minorUnitPart) = _currencyConverter.Convert(amount.Currency, amount.Value);
         return $"{mainNumeral} {mainCurrencyPart.ToUpper()} {Separator} {fractionalNumeral} {minorUnitPart.ToUpper()}";
