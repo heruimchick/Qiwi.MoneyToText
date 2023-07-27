@@ -14,7 +14,7 @@ public class AmountConverter : IAmountConverter
 
     public string ConvertToText(Amount amount)
     {
-        if (amount.Value <= 0)
+        if (amount.Value < 0)
         {
             throw new ArgumentException("Amount must be positive");
         }
