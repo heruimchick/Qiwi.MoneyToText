@@ -75,6 +75,7 @@ public class EnglishNumeralConverterTests
     [TestCase("1.0", "one", "zero")]
     [TestCase("1.1", "one", "ten")]
     [TestCase("12", "twelve", "zero")]
+    [TestCase("12.123", "twelve", "twelve")]
     public void Convert_ShouldReturnCorrectText(decimal input, string expectedMainPart, string expectedFractionalPart)
     {
         // Act
