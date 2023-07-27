@@ -4,6 +4,7 @@ public static class EnglishNumerals
 {
     public static readonly Dictionary<int, string> Simple = new()
     {
+        {0, "zero"},
         {1, "one"},
         {2, "two"},
         {3, "three"},

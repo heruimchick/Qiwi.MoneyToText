@@ -16,8 +16,6 @@ public class EnglishNumeralConverter : INumeralConverter
         var sb = new StringBuilder();
         switch (number)
         {
-            case 0:
-                return string.Empty;
             case < 20:
                 return EnglishNumerals.Simple[number];
             case < 100:
