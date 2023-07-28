@@ -5,11 +5,11 @@ public class EnglishCurrencyConverter : ICurrencyConverter
 {
     public (string MainCurrencyPart, string MinorUnitPart) Convert(Currency currency, decimal value)
     {
-        int dollars = (int) value;
-        int cents = (int) ((value - dollars) * 100);
+        int mainPart = (int) value;
+        int fractionalPart = (int) ((value - mainPart) * 100);
 
-        return (FormatCurrencyPart(dollars, currency.CurrencyCode.ToString().ToLower()),
-            FormatCurrencyPart(cents, currency.MinorUnit.ToString().ToLower()));
+        return (FormatCurrencyPart(mainPart, currency.CurrencyCode.ToString().ToLower()),
+            FormatCurrencyPart(fractionalPart, currency.MinorUnit.ToString().ToLower()));
     }
 
     private static string FormatCurrencyPart(int value, string name)

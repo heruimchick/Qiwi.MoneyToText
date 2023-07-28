@@ -30,4 +30,18 @@ public class AmountConverterTests
         // Assert
         actual.Should().Be(expected);
     }
+    
+    [Test]
+    public void ConvertToText_WhenAmountValueIsNegative_ShouldThrowArgumentException()
+    {
+        // Arrange
+        var amountConverter = new AmountConverter(new EnglishNumeralConverter(), new EnglishCurrencyConverter());
+        var amount = new Amount(new Dollar(), -1); 
+            
+        // Act
+        Action action = () => amountConverter.ConvertToText(amount);
+
+        // Assert
+        action.Should().Throw<ArgumentException>();
+    }
 }
